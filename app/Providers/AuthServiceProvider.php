@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
+use App\Models\Book;
+use App\Policies\BookPolicy;
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -12,8 +15,8 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+    protected $policies = [        
+        'App\Models\Book' => 'App\Policies\BookPolicy'
     ];
 
     /**
