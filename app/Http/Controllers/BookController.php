@@ -44,6 +44,7 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
+        //$this->authorize('create');
         return view('books.create');
     }
 
@@ -53,8 +54,7 @@ class BookController extends Controller {
      * @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Requests\StoreBookRequest $request) {
-
+    public function store(Requests\StoreBookRequest $request) {        
         $this->books->create($request->all());
         return redirect('/books');
     }
@@ -65,9 +65,8 @@ class BookController extends Controller {
      * @param type $id
      * @return type
      */
-    public function show($id) {
-
-        $book = $this->books->find($id);
+    public function show(Book $book) {       
+        $book = $this->books->find($book->id);
         return view('books.show', compact('book'));
     }
 
@@ -78,7 +77,7 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Book $book) {
-
+        $this->authorize('edit', $book);
         $book = $this->books->find($book->id);
         return view('books.edit', compact('book'));
     }

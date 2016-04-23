@@ -10,22 +10,14 @@ class UpdateBookRequest extends Request {
 
     use HandlesAuthorization;
 
-    protected $user;
-
-    public function __construct(\App\User $user) {
-        $this->user = Auth::user();
-    }
-
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize() {
-        if ($this->user->id === 1)
-            return true;
-        else
-            $this->deny();
+    public function authorize() {    
+        $this->setMessage('You do not have the access to create a book');
+        return Auth::user()->level_id === 5;
     }
 
     /**

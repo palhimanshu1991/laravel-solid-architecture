@@ -6,6 +6,10 @@
         <form class="col-md-4" action="{{url('books/'.$book->id)}}" method="POST">
             <input type="hidden" name="_method" value="PUT">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            
+            <!--display form errors-->
+            @include('commons.errors_request')
+            
             <div class="form-group">
                 <label for="title">Book Title</label>
                 <input value="{{$book->title}}" required="yes" type="text" class="form-control" id="title" name="title" placeholder="Title of the book">
