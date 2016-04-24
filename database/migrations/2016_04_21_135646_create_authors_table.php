@@ -17,6 +17,7 @@ class CreateAuthorsTable extends Migration
             $table->increments('id');                        
             $table->string('name');
             $table->string('profile_image_url');
+            $table->softDeletes();
             $table->timestamps();
             
         });

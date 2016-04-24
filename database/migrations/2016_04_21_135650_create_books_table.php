@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->integer('author_id')->unsigned();
             $table->string('title');
             $table->string('cover_url');
+            $table->softDeletes();
             $table->timestamps();
             
             // assigning a foreign key 

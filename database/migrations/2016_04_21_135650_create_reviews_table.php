@@ -18,6 +18,7 @@ class CreateReviewsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('book_id')->unsigned();            
             $table->string('review');
+            $table->softDeletes();
             $table->timestamps();
             
             // assigning a foreign key 
