@@ -6,9 +6,7 @@ use App\Http\Requests;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Book;
-use App\Repositories\AuthorRepository;
 use App\Repositories\BookRepository;
-use App\Repositories\ReviewRepository;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -82,7 +80,7 @@ class BookController extends Controller
      * Display a form to edit a book.
      *
      * @param Book $book
-     * @return \Illuminate\Http\Response     
+     * @return \Illuminate\Http\Response
      */
     public function edit(Book $book)
     {
