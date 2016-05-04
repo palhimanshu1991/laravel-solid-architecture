@@ -25,23 +25,55 @@ class BookRepository implements RepositoryInterface
      * @param $request
      * @return static
      */
-    public function create($request)
+    public function create(Request $request)
     {
-        $input = Collect($request)->only('title', 'author_id');
+        $params = $this->params($request);
 
-        $book = Book::create($input->all());
+        $book = Book::create($params);
 
-        // if book create
-        if($book)
-            // if file exists
-            if($file = $request->file('cover_url'))
-                // upload the book cover
-                if($filename = $this->uploadBookCover($file, $book)){
-                    $book->cover_url = $filename;
-                    $book->save();
-                }
+        $this->uploadBookCover($request->file('cover_url'), $book);
 
         return $book;
+    }
+
+    /**
+     * Common function to upload a book file
+     *
+     * @param $file
+     * @param $book
+     * @return string
+     */
+    public function uploadBookCover($file, Book $book)
+    {
+
+        // if book create
+        if ($book && $file) {
+
+            // get the folder for storage
+            $destination = '/books/' . $book->id . '/';
+
+            // get a clean filename
+            $filename = str_random(16) . '.' . $file->getClientOriginalExtension();
+
+            // absolute path
+            $absolute_path = $destination . $filename;
+
+            // move the file to the destination  file
+            $storage = \Storage::put($absolute_path, file_get_contents($file->getRealPath()));
+
+            // return filename if file is moved
+            if ($storage) {
+
+                // store the filename
+                $book->cover_url = $filename;
+                $book->save();
+
+                return $filename;
+
+            }
+        }
+
+
     }
 
     /**
@@ -62,10 +94,10 @@ class BookRepository implements RepositoryInterface
      * @param $id
      * @return mixed
      */
-    public function update($request, $id)
+    public function update(Request $request, $id)
     {
-        $request = Collect($request)->only('title', 'author_id');
-        return Book::where('id', $id)->update($request->all());
+        $params = $this->params($request);
+        return Book::where('id', $id)->update($params);
     }
 
     /**
@@ -80,32 +112,12 @@ class BookRepository implements RepositoryInterface
     }
 
     /**
-     * Common function to upload a book file
+     * Return only required params from request
      *
-     * @param $file
-     * @param $book
-     * @return string
+     * @param $request
+     * @return mixed
      */
-    public function uploadBookCover($file, $book)
-    {
-
-        // get the folder for storage
-        $destination = '/books/' . $book->id;
-
-        // get a clean filename
-        $filename = str_random(16) . '.' . $file->getClientOriginalExtension();
-
-        // absolute path
-        $absolute_path = $destination . $filename;
-
-        // move the file to the destination  file
-        $storage = \Storage::put($absolute_path, file_get_contents($file->getRealPath()));
-
-        // return filename if file is moved
-        if ($storage) {
-            return $filename;
-        }
-
+    private function params($request){
+        return Collect($request)->only('title', 'author_id')->toArray();
     }
-
 }

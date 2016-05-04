@@ -21,9 +21,8 @@ class AuthorController extends Controller {
      *
      * @return void
      */
-    public function __construct(AuthorRepository $authors) {
+    public function __construct() {
         $this->middleware('auth');
-        $this->authors = $authors;
     }
 
     /**
@@ -77,6 +76,8 @@ class AuthorController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
+
+        return $id;
 
         $author = $this->authors->find($id);
         return view('authors.edit', compact('author'));

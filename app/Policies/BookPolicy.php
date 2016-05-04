@@ -32,4 +32,15 @@ class BookPolicy extends BasePolicy {
         return $this->ifAdmin($user);
     }
 
+    /**
+     * Determine if the given user can destroy the given resource.
+     *
+     * @param  User  $user
+     * @param  Book  $book
+     * @return bool
+     */
+    public function destroy(User $user, Book $book) {
+        return $this->ifAdmin($user);
+    }
+
 }

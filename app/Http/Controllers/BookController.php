@@ -59,7 +59,7 @@ class BookController extends Controller
      */
     public function store(StoreBookRequest $request)
     {
-        $this->books->create($request->all());
+        $this->books->create($request);
         return redirect('/books');
     }
 
@@ -97,7 +97,7 @@ class BookController extends Controller
      */
     public function update(UpdateBookRequest $request, Book $book)
     {
-        $this->books->update($request->all(), $book->id);
+        $this->books->update($request, $book->id);
         return redirect('books');
     }
 
@@ -107,10 +107,15 @@ class BookController extends Controller
      * @param type $id
      * @return \Illuminate\Http\Response
      */
-    public function destory($id)
+    public function destroy(Book $book)
     {
+        // check if the user has authorization to perform this
+        $this->authorize('destroy', $book);
 
-        $this->books->delete($id);
+        // delete the book
+        $book->delete();
+
+        // redirect to books
         return redirect('/books');
     }
 

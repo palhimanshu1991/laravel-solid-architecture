@@ -16,9 +16,9 @@ interface RepositoryInterface {
     
     public function find($id);    
 
-    public function create($request);
+    public function create(Request $request);
 
-    public function update($request, $id);
+    public function update(Request $request, $id);
 
     public function delete($id);
 }

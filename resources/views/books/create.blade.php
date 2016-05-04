@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <form class="col-md-4" action="{{url('books')}}" method="POST">
+        <form class="col-md-4" action="{{url('books')}}" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             
             <!--display form errors-->

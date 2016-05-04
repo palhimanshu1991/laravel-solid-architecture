@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events\Book;
+namespace App\Http\Requests\Book;
 
 use App\Events\Event;
 use Illuminate\Queue\SerializesModels;

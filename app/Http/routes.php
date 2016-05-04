@@ -28,9 +28,11 @@ Route::post('books', 'BookController@store');
 Route::get('books/{book}', 'BookController@show');
 Route::get('books/{book}/edit', 'BookController@edit');
 Route::put('books/{book}', 'BookController@update');
-Route::delete('books/{book}', 'BookController@delete');
+Route::delete('books/{book}', 'BookController@destroy');
 
 
-Route::resource('authors','AuthorController');
+//Route::get('authors/{author}/edit', 'AuthorController@edit');
+
+ Route::resource('authors','AuthorController');
 Route::resource('reviews','ReviewController');
 Route::resource('users','UserController');
