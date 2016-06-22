@@ -5,47 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0baae74-6d79-40e7-9479-c48758a56093" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/blade.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/laravel-solid-architecture.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Book/Jobs/NotifyUsersAboutNewBook.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Book/Listeners/BookEventListener.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/User/UserController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/FileUploader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/UserLevels.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Requests/Book/DestroyBookRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Listeners/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Policies/.gitkeep" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Events/Book/BookWasCreated.php" afterPath="$PROJECT_DIR$/app/Http/Book/Events/BookWasCreated.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Events/Book/BookWasDeleted.php" afterPath="$PROJECT_DIR$/app/Http/Book/Events/BookWasDeleted.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Events/Book/BookWasUpdated.php" afterPath="$PROJECT_DIR$/app/Http/Book/Events/BookWasUpdated.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Events/Event.php" afterPath="$PROJECT_DIR$/app/Http/Event.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Auth/AuthController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php" afterPath="$PROJECT_DIR$/app/Http/Auth/PasswordController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" afterPath="$PROJECT_DIR$/app/Http/Author/AuthorController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterPath="$PROJECT_DIR$/app/Http/Book/BookController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterPath="$PROJECT_DIR$/app/Http/Controller.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Home/HomeController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" afterPath="$PROJECT_DIR$/app/Http/Review/ReviewController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Requests/Book/StoreBookRequest.php" afterPath="$PROJECT_DIR$/app/Http/Book/Requests/StoreBookRequest.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Requests/Book/UpdateBookRequest.php" afterPath="$PROJECT_DIR$/app/Http/Book/Requests/UpdateBookRequest.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Requests/Request.php" afterPath="$PROJECT_DIR$/app/Http/Request.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Jobs/Job.php" afterPath="$PROJECT_DIR$/app/Http/Job.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Jobs/SendWelcomeEmail.php" afterPath="$PROJECT_DIR$/app/Http/User/Jobs/SendWelcomeEmail.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Listeners/BookCreationListener.php" afterPath="$PROJECT_DIR$/app/Http/Book/Listeners/BookCreationListener.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Listeners/EventListener.php" afterPath="$PROJECT_DIR$/app/Http/Book/Listeners/EventListener.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Policies/BasePolicy.php" afterPath="$PROJECT_DIR$/app/Http/Policy.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Policies/BookPolicy.php" afterPath="$PROJECT_DIR$/app/Http/Book/BookPolicy.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Repositories/AuthorRepository.php" afterPath="$PROJECT_DIR$/app/Http/Author/AuthorRepository.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Repositories/BookRepository.php" afterPath="$PROJECT_DIR$/app/Http/Book/BookRepository.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Repositories/ReviewRepository.php" afterPath="$PROJECT_DIR$/app/Http/Review/ReviewRepository.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Repositories/UserRepository.php" afterPath="$PROJECT_DIR$/app/Http/User/UserRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Contracts/RepositoryInterface.php" afterPath="$PROJECT_DIR$/app/Contracts/RepositoryInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Book.php" afterPath="$PROJECT_DIR$/app/Models/Book.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/books/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/books/edit.blade.php" />
     </list>
     <ignored path="laravel-solid-architecture.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -169,10 +134,6 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="laravel-solid-architecture">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -278,12 +239,20 @@
       <workItem from="1462268322671" duration="1986000" />
       <workItem from="1462338427854" duration="97000" />
       <workItem from="1462381352561" duration="2641000" />
-      <workItem from="1466628611505" duration="2206000" />
+      <workItem from="1466628611505" duration="2424000" />
     </task>
+    <task id="LOCAL-00001" summary="Introduing components">
+      <created>1466630908379</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1466630908379</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10135000" />
+    <option name="totallyTimeSpent" value="10353000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -301,6 +270,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.273906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -328,6 +298,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Introduing components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduing components" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
