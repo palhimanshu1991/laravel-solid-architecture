@@ -19,6 +19,17 @@ class EventServiceProvider extends ServiceProvider
     ];
 
     /**
+     * Event subscribers are classes that may subscribe to multiple events from within the class itself,
+     * allowing you to define several event handlers within a single class.
+     * Subscribers should define a subscribe method, which will be passed an event dispatcher instance:
+     *
+     * @var array
+     */
+    protected $subscribe = [
+        'App\Listeners\BookEventListener'
+    ];
+
+    /**
      * Register any other events for your application.
      *
      * @param  \Illuminate\Contracts\Events\Dispatcher  $events

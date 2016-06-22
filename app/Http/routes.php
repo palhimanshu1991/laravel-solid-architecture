@@ -17,18 +17,18 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'Home\HomeController@index');
 
 /**
  * Books
  */
-Route::get('books', 'BookController@index');
-Route::get('books/create', 'BookController@create');
-Route::post('books', 'BookController@store');
-Route::get('books/{book}', 'BookController@show');
-Route::get('books/{book}/edit', 'BookController@edit');
-Route::put('books/{book}', 'BookController@update');
-Route::delete('books/{book}', 'BookController@destroy');
+Route::get('books', 'Book\BookController@index');
+Route::get('books/create', 'Book\BookController@create');
+Route::post('books', 'Book\BookController@store');
+Route::get('books/{book}', 'Book\BookController@show');
+Route::get('books/{book}/edit', 'Book\BookController@edit');
+Route::put('books/{book}', 'Book\BookController@update');
+Route::delete('books/{book}', 'Book\BookController@destroy');
 
 
 //Route::get('authors/{author}/edit', 'AuthorController@edit');
