@@ -26,7 +26,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $subscribe = [
-        'App\Listeners\BookEventListener'
+        'App\Http\Book\Listeners\BookEventListener'
     ];
 
     /**
