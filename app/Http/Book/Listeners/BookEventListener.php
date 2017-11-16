@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listeners;
+namespace App\Http\Book\Listeners;
 
 /**
  * Event subscribers are classes that may subscribe to multiple events from within the class itself,
