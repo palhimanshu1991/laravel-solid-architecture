@@ -1,4 +1,6 @@
-# Laravel SOLID Architecture
+# Laravel SOLID Architecture 
+[![Travis (.com)](https://img.shields.io/travis/com/haliliceylan/laravel-solid-architecture.svg)](https://github.com/haliliceylan/laravel-solid-architecture)
+![StyleCI](https://github.styleci.io/repos/147323455/shield)
 
 ## Overview
 
