@@ -2,15 +2,13 @@
 
 namespace App\Http\Review;
 
-use App\Http\Requests;
 use App\Repositories\ReviewRepository;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-
     /**
-     * The review repository instance
+     * The review repository instance.
      *
      * @var ReviewRepository
      */
@@ -34,8 +32,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-
         $reviews = $this->reviews->getAll();
+
         return view('reviews.index', compact('reviews'));
     }
 
@@ -52,13 +50,14 @@ class ReviewController extends Controller
     /**
      * Create a new review.
      *
-     * @param  Request $request
+     * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-
         $this->reviews->create($request->all());
+
         return redirect('/reviews');
     }
 
@@ -66,26 +65,27 @@ class ReviewController extends Controller
      * Display a form to edit a review.
      *
      * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-
         $review = $this->reviews->find($id);
+
         return view('reviews.edit', compact('review'));
     }
 
     /**
      * Update a review.
      *
-     * @param  Request $request
+     * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-
         $this->reviews->update($request->all(), $id);
+
         return redirect('/reviews');
     }
-
 }

@@ -7,7 +7,6 @@ use App\Models\Review;
 
 class ReviewRepository implements RepositoryInterface
 {
-
     public function getAll()
     {
         return Review::all();
@@ -32,5 +31,4 @@ class ReviewRepository implements RepositoryInterface
     {
         return Review::find($id);
     }
-
 }

@@ -19,7 +19,7 @@ Route::auth();
 
 Route::get('/home', 'Home\HomeController@index');
 
-/**
+/*
  * Books
  */
 Route::get('books', 'Book\BookController@index');
@@ -30,9 +30,8 @@ Route::get('books/{book}/edit', 'Book\BookController@edit');
 Route::put('books/{book}', 'Book\BookController@update');
 Route::delete('books/{book}', 'Book\BookController@destroy');
 
-
 //Route::get('authors/{author}/edit', 'AuthorController@edit');
 
- Route::resource('authors','AuthorController');
-Route::resource('reviews','ReviewController');
-Route::resource('users','UserController');
+ Route::resource('authors', 'AuthorController');
+Route::resource('reviews', 'ReviewController');
+Route::resource('users', 'UserController');

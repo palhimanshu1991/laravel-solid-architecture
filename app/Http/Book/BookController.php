@@ -2,18 +2,16 @@
 
 namespace App\Http\Book;
 
-use App\Http\Controller;
-use App\Http\Requests;
 use App\Http\Book\Requests\StoreBookRequest;
 use App\Http\Book\Requests\UpdateBookRequest;
+use App\Http\Controller;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-
     /**
-     * The book repository instance
+     * The book repository instance.
      *
      * @var BookRepository
      */
@@ -38,6 +36,7 @@ class BookController extends Controller
     public function index()
     {
         $books = $this->books->getAll();
+
         return view('books.index', compact('books'));
     }
 
@@ -54,25 +53,28 @@ class BookController extends Controller
     /**
      * Create a new book.
      *
-     * @param  Request $request
+     * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreBookRequest $request)
     {
         $this->books->create($request);
+
         return redirect('/books');
     }
 
-
     /**
-     * Display a book
+     * Display a book.
      *
      * @param Book $book
+     *
      * @return mixed
      */
     public function show(Book $book)
     {
         $book = $this->books->find($book->id);
+
         return view('books.show', compact('book'));
     }
 
@@ -80,31 +82,36 @@ class BookController extends Controller
      * Display a form to edit a book.
      *
      * @param Book $book
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Book $book)
     {
         $this->authorize('edit', $book);
         $book = $this->books->find($book->id);
+
         return view('books.edit', compact('book'));
     }
 
     /**
      * Update a book.
      *
-     * @param  Request $request
+     * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateBookRequest $request, Book $book)
     {
         $this->books->update($request, $book->id);
+
         return redirect('books');
     }
 
     /**
-     * Delete a book
+     * Delete a book.
      *
      * @param type $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Book $book)
@@ -118,5 +125,4 @@ class BookController extends Controller
         // redirect to books
         return redirect('/books');
     }
-
 }

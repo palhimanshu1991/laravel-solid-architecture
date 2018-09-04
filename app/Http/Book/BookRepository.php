@@ -10,16 +10,14 @@ use Illuminate\Http\Request;
 
 class BookRepository implements RepositoryInterface
 {
-
     use FileUploader, UserLevels;
 
     public function __construct()
     {
-
     }
 
     /**
-     * Get all books
+     * Get all books.
      *
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
@@ -29,9 +27,10 @@ class BookRepository implements RepositoryInterface
     }
 
     /**
-     * Create & store a new book
+     * Create & store a new book.
      *
      * @param $request
+     *
      * @return static
      */
     public function create($request)
@@ -46,9 +45,10 @@ class BookRepository implements RepositoryInterface
     }
 
     /**
-     * Return only required params from request
+     * Return only required params from request.
      *
      * @param $request
+     *
      * @return mixed
      */
     private function params($request)
@@ -57,10 +57,11 @@ class BookRepository implements RepositoryInterface
     }
 
     /**
-     * Common function to upload a book file
+     * Common function to upload a book file.
      *
      * @param $file
      * @param $book
+     *
      * @return string
      */
     public function uploadBookCover($file, Book $book)
@@ -70,13 +71,13 @@ class BookRepository implements RepositoryInterface
         if ($book && $file) {
 
             // get the folder for storage
-            $destination = '/books/' . $book->id . '/';
+            $destination = '/books/'.$book->id.'/';
 
             // get a clean filename
-            $filename = str_random(16) . '.' . $file->getClientOriginalExtension();
+            $filename = str_random(16).'.'.$file->getClientOriginalExtension();
 
             // absolute path
-            $absolute_path = $destination . $filename;
+            $absolute_path = $destination.$filename;
 
             // move the file to the destination  file
             $storage = \Storage::put($absolute_path, file_get_contents($file->getRealPath()));
@@ -89,17 +90,15 @@ class BookRepository implements RepositoryInterface
                 $book->save();
 
                 return $filename;
-
             }
         }
-
-
     }
 
     /**
-     * Delete a book by id
+     * Delete a book by id.
      *
      * @param $id
+     *
      * @return int
      */
     public function delete($id)
@@ -108,10 +107,11 @@ class BookRepository implements RepositoryInterface
     }
 
     /**
-     * Update a book
+     * Update a book.
      *
      * @param $request
      * @param $id
+     *
      * @return mixed
      */
     public function update($request, $id)
@@ -132,9 +132,10 @@ class BookRepository implements RepositoryInterface
     }
 
     /**
-     * Find a book by id
+     * Find a book by id.
      *
      * @param $id
+     *
      * @return mixed
      */
     public function find($id)
