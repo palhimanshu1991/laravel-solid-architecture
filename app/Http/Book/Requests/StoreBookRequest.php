@@ -7,7 +7,6 @@ use Auth;
 
 class StoreBookRequest extends Request
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -16,9 +15,9 @@ class StoreBookRequest extends Request
     public function authorize()
     {
         $this->setMessage('You do not have the access to create a book');
+
         return Auth::user()->level_id === 5;
     }
-
 
     /**
      * Get the validation rules that apply to the request.
@@ -28,10 +27,8 @@ class StoreBookRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required',
-            'author_id' => 'required | exists:authors,id'
+            'title'     => 'required',
+            'author_id' => 'required | exists:authors,id',
         ];
     }
-
-
 }

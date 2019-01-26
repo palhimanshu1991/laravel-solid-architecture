@@ -7,7 +7,6 @@ use App\User;
 
 class UserRepository implements RepositoryInterface
 {
-
     public function getAll()
     {
         return User::all();
@@ -32,5 +31,4 @@ class UserRepository implements RepositoryInterface
     {
         return User::find($id);
     }
-
 }

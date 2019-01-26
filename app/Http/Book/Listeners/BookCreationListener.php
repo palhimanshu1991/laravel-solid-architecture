@@ -19,7 +19,8 @@ class BookCreationListener
     /**
      * Handle the event.
      *
-     * @param  BookWasCreated $event
+     * @param BookWasCreated $event
+     *
      * @return void
      */
     public function handle(BookWasCreated $event)

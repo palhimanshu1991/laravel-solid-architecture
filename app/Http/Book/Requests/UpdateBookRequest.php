@@ -8,7 +8,6 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UpdateBookRequest extends Request
 {
-
     use HandlesAuthorization;
 
     /**
@@ -19,6 +18,7 @@ class UpdateBookRequest extends Request
     public function authorize()
     {
         $this->setMessage('You do not have the access to create a book');
+
         return Auth::user()->level_id === 5;
     }
 
@@ -30,9 +30,8 @@ class UpdateBookRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title'     => 'required',
             'author_id' => 'required | exists:authors,id',
         ];
     }
-
 }

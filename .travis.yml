@@ -1,0 +1,22 @@
+language: php
+
+php:
+  - 7.2
+  - 7.0
+  - hhvm
+ 
+services:
+  - mongodb
+
+cache:
+  directories:
+    - node_modules
+    - vendor
+  
+before_script:
+  - cp .env.travis .env
+  - composer self-update
+  - composer install --no-interaction
+  - npm install
+  - php artisan key:generate
+  - php artisan migrate --seed

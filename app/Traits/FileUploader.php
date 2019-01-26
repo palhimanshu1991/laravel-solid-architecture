@@ -2,14 +2,10 @@
 
 namespace App\Traits;
 
-trait FileUploader {
-
-
-	public function upload(){
-
-		return  'upload';
-
-	}
-
-
+trait FileUploader
+{
+    public function upload()
+    {
+        return  'upload';
+    }
 }
